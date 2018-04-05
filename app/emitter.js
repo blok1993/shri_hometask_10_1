@@ -52,7 +52,7 @@ const handler = function () {
 };
 
 /**
- * Замеряем время выполнения loopsNumber циклов on -> emit -> off.
+ * Замеряем время выполнения цепочки вызовов on -> emit -> off.
  */
 const testEmitter = function () {
     const loopsNumber = document.querySelector('.loops-number').value;
