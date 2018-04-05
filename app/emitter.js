@@ -44,7 +44,7 @@ const emitter = {
     }
 };
 
-const handler = function () {
+const handler = () => {
     let a = 1;
     a *= 2;
 
@@ -54,9 +54,7 @@ const handler = function () {
 /**
  * Замеряем время выполнения цепочки вызовов on -> emit -> off.
  */
-const testEmitter = function () {
-    const loopsNumber = document.querySelector('.loops-number').value;
-
+const testEmitter = (loopsNumber) => {
     let time = performance.now();
 
     for (let i = 0; i < loopsNumber; i++) {
@@ -74,6 +72,8 @@ const testEmitter = function () {
     console.log('Время выполнения составило: ', time.toFixed(2) + ' ms');
 };
 
-document.querySelector('.start-count').addEventListener('click', function () {
-   testEmitter();
+document.querySelector('.start-count').addEventListener('click', () => {
+    const loopsNumber = document.querySelector('.loops-number').value;
+
+    testEmitter(loopsNumber);
 });
