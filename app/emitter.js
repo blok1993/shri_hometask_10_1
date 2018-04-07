@@ -1,3 +1,4 @@
+/* eslint-disable valid-jsdoc */
 const emitter = {
     events: {},
 
@@ -30,7 +31,8 @@ const emitter = {
     },
 
     /**
-     * Сложность метода emitter.emit составляет O(N), где N - кол-во хендлеров для конкретного event.
+     * Сложность метода emitter.emit составляет O(N),
+     * где N - кол-во хендлеров для конкретного event.
      */
     emit: function(event, ...args) {
         const eventHandlers = this.events[event];
@@ -41,7 +43,7 @@ const emitter = {
                 eventHandlers[i](...args);
             }
         }
-    }
+    },
 };
 
 const handler = () => {
